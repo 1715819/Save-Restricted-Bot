@@ -46,3 +46,14 @@ https://t.me/c/xxxx/101 - 120
 ```
 
 _note that space in between doesn't matter_
+
+# 部署
+```
+git clone https://github.com/1715819/Save-Restricted-Bot
+```
+```
+docker build -t forwardbot .
+```
+```
+docker run --env-file .env forwardbot
+```
