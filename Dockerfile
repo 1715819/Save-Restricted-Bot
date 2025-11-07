@@ -6,4 +6,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . /app
 ENV FLASK_APP=app.py
-CMD flask run -h 0.0.0.0 -p 10000 & python3 main.py
+CMD ["/bin/sh", "-c", "flask run -h 0.0.0.0 -p 10000 & python3 main.py"]
