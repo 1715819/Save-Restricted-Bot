@@ -8,7 +8,12 @@ import os
 import threading
 import json
 
-with open('config.json', 'r') as f: DATA = json.load(f)
+DATA = {}
+try:
+    with open('config.json', 'r') as f:
+        DATA = json.load(f)
+except FileNotFoundError:
+    pass # config.json is optional, env vars will be used
 def getenv(var): return os.environ.get(var) or DATA.get(var, None)
 
 bot_token = getenv("TOKEN") 
